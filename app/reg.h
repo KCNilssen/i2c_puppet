@@ -10,7 +10,7 @@ enum reg_id
 	REG_ID_INT = 0x03, // interrupt status
 	REG_ID_KEY = 0x04, // key status
 	REG_ID_BKL = 0x05, // backlight
-	REG_ID_DEB = 0x06, // key debounce cfg (not implemented)
+	REG_ID_BAT = 0x06, // batt adc value
 	REG_ID_FRQ = 0x07, // key poll freq cfg
 	REG_ID_RST = 0x08, // trigger a reset
 	REG_ID_FIF = 0x09, // key fifo

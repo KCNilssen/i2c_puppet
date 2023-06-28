@@ -45,7 +45,7 @@ void reg_process_packet(uint8_t in_reg, uint8_t in_data, uint8_t *out_buffer, ui
 	// common R/W registers
 	case REG_ID_CFG:
 	case REG_ID_INT:
-	case REG_ID_DEB:
+	case REG_ID_BAT:
 	case REG_ID_FRQ:
 	case REG_ID_BKL:
 	case REG_ID_BK2:
@@ -192,7 +192,7 @@ void reg_init(void)
 {
 	reg_set_value(REG_ID_CFG, CFG_OVERFLOW_INT | CFG_KEY_INT | CFG_USE_MODS);
 	reg_set_value(REG_ID_BKL, 255);
-	reg_set_value(REG_ID_DEB, 10);
+	reg_set_value(REG_ID_BAT, 0);	// What to set the defualt value to?
 	reg_set_value(REG_ID_FRQ, 10);	// ms
 	reg_set_value(REG_ID_BK2, 255);
 	reg_set_value(REG_ID_PUD, 0xFF);
