@@ -48,7 +48,7 @@ void reg_process_packet(uint8_t in_reg, uint8_t in_data, uint8_t *out_buffer, ui
 	case REG_ID_BAT:
 	case REG_ID_FRQ:
 	case REG_ID_BKL:
-	case REG_ID_BK2:
+	case REG_ID_BFQ:
 	case REG_ID_GIC:
 	case REG_ID_GIN:
 	case REG_ID_HLD:
@@ -60,15 +60,18 @@ void reg_process_packet(uint8_t in_reg, uint8_t in_data, uint8_t *out_buffer, ui
 			reg_set_value(reg, in_data);
 
 			switch (reg) {
-			case REG_ID_BKL:
-			case REG_ID_BK2:
+			case REG_ID_BKL:			
 				backlight_sync();
 				break;
+
+			// case REG_ID_BFQ:
+			// 	battery_frq_sync();
+			// 	break;
 
 			case REG_ID_ADR:
 				puppet_i2c_sync_address();
 				break;
-
+ 
 			default:
 				break;
 			}
@@ -194,7 +197,7 @@ void reg_init(void)
 	reg_set_value(REG_ID_BKL, 255);
 	reg_set_value(REG_ID_BAT, 0);	// What to set the defualt value to?
 	reg_set_value(REG_ID_FRQ, 10);	// ms
-	reg_set_value(REG_ID_BK2, 255);
+	reg_set_value(REG_ID_BFQ, 10);  // in 100's of ms. 10 is equal to 1 second. 1 is 100ms
 	reg_set_value(REG_ID_PUD, 0xFF);
 	reg_set_value(REG_ID_HLD, 30);	// 10ms units
 	reg_set_value(REG_ID_ADR, 0x1F);

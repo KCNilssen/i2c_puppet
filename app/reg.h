@@ -14,7 +14,7 @@ enum reg_id
 	REG_ID_FRQ = 0x07, // key poll freq cfg
 	REG_ID_RST = 0x08, // trigger a reset
 	REG_ID_FIF = 0x09, // key fifo
-	REG_ID_BK2 = 0x0A, // backlight 2
+	REG_ID_BFQ = 0x0A, // battery poll freq cfg
 	REG_ID_DIR = 0x0B, // gpio direction
 	REG_ID_PUE = 0x0C, // gpio input pull enable
 	REG_ID_PUD = 0x0D, // gpio input pull direction
@@ -52,6 +52,7 @@ enum reg_id
 #define INT_PANIC			(1 << 4)
 #define INT_GPIO			(1 << 5)
 #define INT_TOUCH			(1 << 6)
+#define INT_BATTERY			(1 << 7)
 // Future me: If we need more INT_*, add a INT2 and use (1 << 7) here as indicator that the info is in INT2
 
 #define KEY_CAPSLOCK		(1 << 5) // Caps lock status

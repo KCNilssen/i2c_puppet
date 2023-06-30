@@ -5,6 +5,7 @@
 #include "keyboard.h"
 #include "reg.h"
 #include "touchpad.h"
+// #include "batt_adc.h"
 
 #include <pico/stdlib.h>
 
@@ -78,6 +79,18 @@ static void gpioexp_cb(uint8_t gpio, uint8_t gpio_idx)
 }
 static struct gpioexp_callback gpioexp_callback = { .func = gpioexp_cb };
 
+// static void batt_adc_cb(uint16_t adc_value)
+// {
+// 	(void)adc_value;	
+
+// 	reg_set_bit(REG_ID_INT, INT_BATTERY);
+
+// 	gpio_put(PIN_INT, 0);
+// 	busy_wait_ms(reg_get_value(REG_ID_IND));
+// 	gpio_put(PIN_INT, 1);
+// }
+// static struct batt_adc_callback batt_adc_callback = { .func = batt_adc_cb };
+
 void interrupt_init(void)
 {
 	gpio_init(PIN_INT);
@@ -91,4 +104,6 @@ void interrupt_init(void)
 	touchpad_add_touch_callback(&touch_callback);
 
 	gpioexp_add_int_callback(&gpioexp_callback);
+
+	// batt_adc_add_read_callback(&batt_adc_callback);
 }
