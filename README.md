@@ -12,7 +12,7 @@ See [Protocol](#protocol) for details of the I2C puppet.
 
 ## Additions
 
-This fork of the I2C Puppet written by solderparty alters the pinouts of the original repo to match the current project. It also adds support for reading the project devices onboard battery via adc. This replaces two of the registers, debouncing and backlight2 to accomadate this. 
+This fork of the I2C Puppet written by [solderparty](https://github.com/solderparty/i2c_puppet) alters the pinouts of the original repo to match the current project. It also adds support for reading the project devices onboard battery via adc. This replaces two of the registers, debouncing and backlight2 to accomadate this. 
 
 ## Checkout
 
