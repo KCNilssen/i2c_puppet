@@ -10,6 +10,10 @@ On the I2C side, you can access the key presses, the trackpad state, you can con
 
 See [Protocol](#protocol) for details of the I2C puppet.
 
+## Additions
+
+This fork of the I2C Puppet written by solderparty alters the pinouts of the original repo to match the current project. It also adds support for reading the project devices onboard battery via adc. This replaces two of the registers, debouncing and backlight2 to accomadate this. 
+
 ## Checkout
 
 The code depends on the Raspberry Pi Pico SDK, which is added as a submodule. Because the Pico SDK includes TinyUSB as a module, it is not recommended to do a recursive submodule init, and rather follow these steps:
